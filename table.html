@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+		<style>
+			table caption
+			{
+					background-color: #b0c4de;
+			}
+		</style>
+		<script>
+			function account_exist()
+			{
+				var a=document.getElementById("check_account");
+				if(a.checked==true)
+				{
+					document.getElementById("account").style.visibility = "visible";
+				}
+				else
+				{
+					document.getElementById("account").style.visibility = "hidden";
+				}
+			}
+			function start()
+			{
+				document.getElementById("account").style.visibility = "hidden";
+			}
+			function select_all()
+			{
+				var select=document.forms.question.interesting;
+				for(int i=0;i<select.length;++i)
+				{
+					select[i].checked=true;
+				}
+			}
+		</script>
+    </head>
+    <body onload="start()">
+		<form>
+			<table name="question">
+			<caption>三國殺問卷</caption>
+			   <tr>
+					<td>姓名：</td>
+					<td>
+						<input type="text"/>
+					</td>
+					<td>性別：</td>
+					<td>
+						<input type="radio" name="sex" value="male"/>男
+						<input type="radio" name="sex" value="female"/>女
+					</td>
+			   </tr>
+			   <tr>
+					<td>玩家類型：</td>
+					<td>
+						<input type="checkbox" name="interesting" value="身分局"/> 身分局 </br>
+						<input type="checkbox" name="interesting" value="國戰"/> 國戰</br>
+						<input type="checkbox" name="interesting" value="1V1"/> 1V1 </br>
+						<input type="checkbox" name="interesting" value="3V3"/> 3V3 </br>
+					</td>
+					<td>
+						<input type="checkbox" id="check_account" onchange="account_exist()"/> 有三國殺online 帳號 </br>
+					</td>	
+					<td>
+						<input type="text" id="account"/>
+					</td>	
+			   </tr>
+			   <tr>
+					<td>
+						1. 哪個武將血量最多<br>
+						<form>
+							  <input type=radio name="Q1" value="董卓"/>A1：董卓</br>
+							  <input type=radio name="Q1" value="華雄"/>A2：華雄</br>
+							  <input type=radio name="Q1" value="呂布"/>A3：呂布</br>
+						</form>
+						2. 哪個武將不能用技能造成2點傷害<br>
+						<form>
+							  <input type=radio name="Q2" value="許褚"/>A1：許褚</br>
+							  <input type=radio name="Q2" value="張角"/>A2：張角</br>
+							  <input type=radio name="Q2" value="張飛"/>A3：張飛</br>
+						</form>
+						3. 一張殺最多可以指定幾個對象<br>
+						<form>
+							  <input type=radio name="Q3" value="3"/>A1：3</br>
+							  <input type=radio name="Q3" value="4"/>A2：4</br>
+							  <input type=radio name="Q3" value="5"/>A3：5</br>
+						</form>
+						4.哪個武將沒有主公技<br>
+						<form>
+							  <input type=radio name="Q4" value="孫堅"/>A1：孫堅</br>
+							  <input type=radio name="Q4" value="孫策"/>A2：孫策</br>
+							  <input type=radio name="Q4" value="孫權"/>A3：孫權</br>
+						</form>
+						5.哪一個點數的判定不會中閃電<br>
+						<form>
+							  <input type=radio name="Q2" value="黑桃1"/>A1：黑桃1</br>
+							  <input type=radio name="Q2" value="黑桃2"/>A2：黑桃2</br>
+							  <input type=radio name="Q2" value="黑桃3"/>A3：黑桃3</br>
+						</form>
+					</td>
+			   </tr>
+			</table>
+			<input type="button" value="全選" onclick="select_all()"/>
+		</form>
+    </body>
+</html>
