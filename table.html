@@ -26,7 +26,7 @@
 			}
 			function select_all()
 			{
-				var select=document.Q_table.question.interesting;
+				var select=document.forms.Q_table.interesting;
 				for(int i=0;i<select.length;++i)
 				{
 					select[i].checked=true;
@@ -36,7 +36,7 @@
     </head>
     <body onload="start()">
 		<form name="Q_table">
-			<table name="question">
+			<table>
 			<caption>三國殺問卷</caption>
 			   <tr>
 					<td>姓名：</td>
